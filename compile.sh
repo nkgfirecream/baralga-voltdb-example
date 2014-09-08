@@ -1,1 +1,1 @@
-voltdb compile -o baralga.jar baralga.sqlc
+voltdb compile -o baralga.jar baralga.sql
