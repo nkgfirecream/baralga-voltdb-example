@@ -1,3 +1,12 @@
+# VoltdDB
+catalog-report.html
+log
+statement-plans
+
+# Baralga Application Catalog
+baralga.jar
+
+
 *.class
 
 # Mobile Tools for Java (J2ME)
