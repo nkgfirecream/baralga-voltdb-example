@@ -3,6 +3,7 @@ catalog-report.html
 log
 statement-plans
 voltdbroot
+voltdb*.txt
 
 # Baralga Application Catalog
 baralga.jar
