@@ -31,7 +31,11 @@ release.properties
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
+<<<<<<< HEAD
 *.iml
+=======
+/*.iml
+>>>>>>> 6e584ac83a8dae56de2a18636ccfcfedcc7277c7
 
 ## Directory-based project format:
 .idea/
