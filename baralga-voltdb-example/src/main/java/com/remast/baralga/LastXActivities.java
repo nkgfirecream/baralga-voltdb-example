@@ -8,7 +8,6 @@ public class LastXActivities extends VoltProcedure {
 
     public final SQLStmt lastXActivitiesSql = new SQLStmt("SELECT TOP ? * FROM ACTIVITY ORDER BY act_end ASC;");
 
-
     public VoltTable[] run(int x) {
         voltQueueSQL(lastXActivitiesSql, x);
         return voltExecuteSQL();
