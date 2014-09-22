@@ -4,7 +4,7 @@ import org.voltdb.SQLStmt;
 import org.voltdb.VoltProcedure;
 import org.voltdb.VoltTable;
 
-public class LastXActivities extends VoltProcedure {
+public class LastXActivitiesJava extends VoltProcedure {
 
     public final SQLStmt lastXActivitiesSql = new SQLStmt("SELECT TOP ? * FROM ACTIVITY ORDER BY act_end ASC;");
 

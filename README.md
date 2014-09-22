@@ -6,6 +6,6 @@ mvn install:install-file \
     -DgroupId=org.voltdb -DartifactId=voltdb-client -Dversion=4.6 \
     -Dpackaging=jar
 
-mvn tomcat7:run
+mvn spring-boot:run
 
-http://localhost:7070/baralga-voltdb-example/hello
+http://localhost:9000/project

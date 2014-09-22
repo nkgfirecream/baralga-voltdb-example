@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -22,7 +23,32 @@ public class ProjectRepository {
     String url = "jdbc:voltdb://localhost:21212";
 
     public List<Project> findAll() {
-    return Collections.emptyList();
+        String sql = "SELECT id, title, description FROM project";
+
+        try {
+            // Load driver. Create connection.
+            Class.forName(driver);
+            Connection conn = DriverManager.getConnection(url);
+
+            // create a statement
+            Statement query = conn.createStatement();
+            ResultSet results = query.executeQuery(sql);
+
+            final List<Project> projects = new ArrayList<>();
+            while (results.next()) {
+                final Project project = new Project();
+                project.setId(results.getString("id"));
+                project.setTitle(results.getString("title"));
+                project.setDescription(results.getString("description"));
+                projects.add(project);
+            }
+
+            return projects;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // TODO: Close statements, connections, etc.
+        }
     }
 
     public Project save(Project project) {
@@ -48,6 +74,8 @@ public class ProjectRepository {
             return project;
         } catch (Exception e) {
             throw new RuntimeException(e);
+        } finally {
+            // TODO: Close statements, connections, etc.
         }
     }
 
@@ -70,14 +98,10 @@ public class ProjectRepository {
                 return project;
             }
             return null;
-
-            //Close statements, connections, etc.
-//            query.close();
-            //            results.close();
-            //            conn.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
+        } finally {
+            // TODO: Close statements, connections, etc.
         }
-
     }
 }
