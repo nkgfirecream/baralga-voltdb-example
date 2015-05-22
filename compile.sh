@@ -16,7 +16,7 @@ else
 fi
 
 # Compile Stored Procedure
-javac -cp ./lib/voltdb-4.6.jar ./baralga-voltdb-example/src/main/java/com/remast/baralga/LastXActivitiesJava.java
+javac -cp ./lib/voltdb-5.2.2.jar ./baralga-voltdb-example/src/main/java/com/remast/baralga/LastXActivitiesJava.java
 
 # Include Stored Procedure
 voltdb compile --classpath=baralga-voltdb-example/src/main/java/ -o baralga.jar baralga.sql

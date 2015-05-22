@@ -1,4 +1,4 @@
 mvn install:install-file \
-    -Dfile=./lib/voltdb-4.6.jar \
-    -DgroupId=org.voltdb -DartifactId=voltdb-client -Dversion=4.6 \
+    -Dfile=./lib/voltdb-5.2.2.jar \
+    -DgroupId=org.voltdb -DartifactId=voltdb -Dversion=5.2.2 \
     -Dpackaging=jar
